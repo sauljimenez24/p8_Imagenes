@@ -1,43 +1,59 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MiImagen());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MiImagen extends StatelessWidget {
+  const MiImagen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Mis Imagenes",
+              style: TextStyle(
+                  fontSize: 30,
+                  fontStyle: FontStyle.italic,
+                  color: Colors.orangeAccent)),
+          backgroundColor: Colors.black,
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              const Text(' Saul JImenez 22308051281222 \n',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.black)),
+              Image.network(
+                'https://raw.githubusercontent.com/sauljimenez24/imagenes-para-APP-flutter/refs/heads/main/filtro.jpg',
+                width: 200, // Ancho opcional
+                height: 200, // Alto opcional
+              ),
+              const SizedBox(height: 20), // Espacio entre las imágenes}
+              Text(' Filtro de Aceite',
+                  style: TextStyle(
+                      fontSize: 17,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.black)),
+              Image.network(
+                'https://raw.githubusercontent.com/sauljimenez24/imagenes-para-APP-flutter/refs/heads/main/imagenn1.png',
+                width: 200, // Ancho opcional
+                height: 200, // Alto opcional
+              ),
+              const SizedBox(height: 20), // Espacio entre las imágenes}
+              Text(
+                'refaccion birlos',
+                style: const TextStyle(
+                    fontSize: 17,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.black),
+              ),
+            ],
+          ),
         ),
       ),
-    );
-  }
-}
+    ); // material App
+  } // widgets
+} // clase Mi Imagen
